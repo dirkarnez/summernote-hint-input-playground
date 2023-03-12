@@ -37,14 +37,12 @@
           words: data,
           match: /\b(\w{1,})$/,
           search: function (keyword, callback) {
-            callback($.grep(this.words, function (item) {
-              return item.indexOf(keyword) === 0;
-            }));
+            callback(this.words.filter(item => item.indexOf(keyword) > -1));
           }
         }
       });
     });
   </script>
 </body>
-
 </html>
+
